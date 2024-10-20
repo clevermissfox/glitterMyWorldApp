@@ -613,3 +613,12 @@ hgroup {
     gap: 0.2em;
   }
 }
+
+/* DROPDOWN Component */
+.dropdown {
+  padding: 0.25em;
+
+  &:is(:focus-visible) {
+    outline-color: var(--clr-brand-primary-500);
+  }
+}

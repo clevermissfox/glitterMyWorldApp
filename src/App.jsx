@@ -140,7 +140,7 @@ export default function App() {
         <div className="scroller-outer">
           <div className="scroller-inner padding-1 row gap-1">
             {products.map((product) => (
-              <a href="#" data-product-id={product.id}>
+              <a href="#" data-product-id={product.id} key={product.id}>
                 <img
                   src={product.images.frame}
                   alt={product.name}
@@ -153,7 +153,7 @@ export default function App() {
         </div>
       </div>
       <ProductCards products={products} />
-      <SingleProduct product={products[0]} />
+      <SingleProduct product={products[1]} />
       <Footer />
     </>
   );

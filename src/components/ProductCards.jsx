@@ -6,7 +6,7 @@ export default function ProductCards({ products }) {
       {products && (
         <div className="row gap-1 padding-1">
           {products.map((product) => (
-            <a data-product-id={product.id}>
+            <a data-product-id={product.id} key={product.id}>
               <ProductCard
                 productSrc={product.images.card}
                 cardWidth="300px"
