@@ -55,7 +55,7 @@ html {
       --clr-primary: #;
       --clr-neutral-100: #FFF;
       --clr-neutral-900: #000;
-  
+
       --clr-bg-body: #;
       --clr-bg-card: #;
   }
@@ -199,11 +199,14 @@ button {
 
 .visually-hidden {
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  block-size: 1px;
-  inline-size: 1px;
+  clip-path: inset(100%);
+  block-size: 0;
+  inline-size: 0;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  font-size: 0;
   white-space: nowrap;
 }
 

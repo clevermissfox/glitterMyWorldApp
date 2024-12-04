@@ -8,6 +8,7 @@ import SingleProduct from "./components/SingleProduct";
 
 export default function App() {
   const [products, setProducts] = useState(productData);
+  console.log(products);
 
   return (
     <>
@@ -140,6 +141,7 @@ export default function App() {
         <div className="scroller-outer">
           <div className="scroller-inner padding-1 row gap-1">
             {products.map((product) => (
+              //  only map if product.isFeatured
               <a href="#" data-product-id={product.id} key={product.id}>
                 <img
                   src={product.images.frame}
