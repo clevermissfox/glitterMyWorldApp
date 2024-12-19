@@ -357,7 +357,7 @@ export const productData = [
     name: "Honorguard Gold",
     description: "Metallic Hybrid",
     origin: "Made in USA-Cosmetic-Vegan-Cruelty Free",
-    isFeatured: false,
+    isFeatured: true,
     materials: [
       {
         type: "opaque",
@@ -439,7 +439,7 @@ export const productData = [
     name: "Peppermint Twist",
     description: "Iridescent Craft",
     origin: "Made in USA-Cosmetic-Vegan-Cruelty Free",
-    isFeatured: false,
+    isFeatured: true,
     materials: [
       {
         type: "iridescent",

@@ -8,11 +8,10 @@ import SingleProduct from "./components/SingleProduct";
 
 export default function App() {
   const [products, setProducts] = useState(productData);
-  console.log(products);
 
   return (
     <>
-      <div className="hero padding-2">
+      <div className="hero padding-2 wrapper">
         <div className="ta-cen">
           <hgroup>
             <h1 className="uppercase">WE SUPPLY GLITTER...</h1>
@@ -23,7 +22,7 @@ export default function App() {
           </hgroup>
           <BtnPrimary>Shop Now</BtnPrimary>
         </div>
-        <section className="filters-wrapper padding-b-1 grid gap-2">
+        <section className="filters-wrapper padding-b-1 grid gap-2 wrapper">
           <div className="grid gap-1">
             <h2 className="uppercase ls-1 ta-cen">Shop Glitter By...</h2>
             <ul className="row jc-cen gap-2">
@@ -136,24 +135,82 @@ export default function App() {
           </div>
         </section>
       </div>
-      <div className="featured-products padding-2 grid gap-1">
+      <div className="featured-products padding-2 grid gap-1 wrapper">
         <h2 className="uppercase ls-1 ta-cen">Featured Products</h2>
         <div className="scroller-outer">
-          <div className="scroller-inner padding-1 row gap-1">
-            {products.map((product) => (
-              //  only map if product.isFeatured
-              <a href="#" data-product-id={product.id} key={product.id}>
-                <img
-                  src={product.images.frame}
-                  alt={product.name}
-                  width="200px"
-                  loading="lazy"
-                />
-              </a>
-            ))}
-          </div>
+          <ul className="scroller-inner padding-1 row gap-1">
+            {products
+              .filter((product) => product.isFeatured)
+              .map((product) => (
+                <li
+                  data-product-id={product.id}
+                  key={product.id}
+                  className="scroll-item"
+                >
+                  <img
+                    src={product.images.frame}
+                    alt={product.name}
+                    width="200px"
+                    loading="lazy"
+                  />
+                </li>
+              ))}
+          </ul>
         </div>
       </div>
+      <section
+        className="featured-services padding-2 wrapper"
+        aria-label="Check out our other services"
+      >
+        <div className="featured-service">
+          <div className="img-wrapper">
+            <img
+              src="./src/assets/images/other_assets/glitter-face_blue.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <h2 className="uppercase">Glitter University</h2>
+            <p>Learn How to Glitter Your World</p>
+            <a href="#">
+              Learn More{" "}
+              <span className="visually-hidden">about Glitter University</span>
+            </a>
+          </div>
+        </div>
+        <div className="featured-service">
+          <div className="img-wrapper">
+            <img
+              src="./src/assets/images/other_assets/glitter-face_gold.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <h2 className="uppercase">Glitter Club</h2>
+            <p>Earn Discounts + Exclusive Offers</p>
+            <a href="#">
+              Learn More{" "}
+              <span className="visually-hidden">about Glitter Club</span>
+            </a>
+          </div>
+        </div>
+        <div className="featured-service">
+          <div className="img-wrapper">
+            <img
+              src="./src/assets/images/other_assets/glitter-lips_purple.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <h2 className="uppercase">Glitter My World</h2>
+            <p>Network with Other Glitter Enthusiasts</p>
+            <a href="#">
+              Learn More{" "}
+              <span className="visually-hidden">about Glitter My World</span>
+            </a>
+          </div>
+        </div>
+      </section>
       <ProductCards products={products} />
       <SingleProduct product={products[1]} />
       <Footer />
